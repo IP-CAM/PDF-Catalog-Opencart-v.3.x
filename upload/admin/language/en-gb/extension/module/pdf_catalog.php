@@ -1,0 +1,67 @@
+<?php
+// Heading
+$_['heading_title']			= 'PDF Catalog';
+
+// Text
+$_['text_extension']		= 'Extensions';
+$_['text_success']			= 'Success: You have modified PDF catalog module!';
+$_['text_edit']				= 'Edit PDF Catalog Module';
+$_['text_hide']				= 'Hide';
+$_['text_description']		= 'Description';
+$_['text_content_top']		= 'Content Top';
+$_['text_content_bottom']	= 'Content Bottom';
+$_['text_column_left']		= 'Column Left';
+$_['text_column_right']		= 'Column Right';
+$_['text_yes']				= 'Yes';
+$_['text_no']				= 'No';
+$_['text_native']			= 'Native';
+$_['text_product_popular']	= 'Most Sold Products';
+$_['text_product_name']		= 'Products Name';
+$_['text_rtl']				= 'Right to Left';
+$_['text_ltr']				= 'Left to Right';
+$_['text_enabled']			= 'Enabled';
+$_['text_disabled']			= 'Disabled';
+
+//Tab
+$_['tab_frontend'] 			= 'Frontend';
+$_['tab_settings'] 			= 'Settings';
+$_['tab_about'] 			= 'About';
+
+
+// Entry
+$_['entry_pdf_settings']	= 'Pdf Settings';
+$_['entry_frontend']		= 'Frontend';
+$_['entry_layout']			= 'Layout:';
+$_['button_install_tcpdf']  = 'Install Tcpdf';
+$_['entry_position']		= 'Position:';
+$_['entry_status']			= 'Status:';
+$_['entry_display_toc'] 	= 'Display Toc:';
+$_['entry_sort_order'] 		= 'Sort Order:';
+$_['entry_description'] 	= 'Introduction in PDF:';
+$_['entry_display_categories'] = 'Display categories:';
+$_['entry_pdf_creator'] 	= 'Creator:';
+$_['entry_pdf_author'] 		= 'Author:';
+$_['entry_pdf_title'] 		= 'Title:';
+$_['entry_pdf_max_products'] = 'Max Products:';
+$_['entry_pdf_subject'] 	= 'Subject:';
+$_['entry_pdf_keywords'] 	= 'Keywords:';
+$_['entry_pdf_catalog_display_description'] = 'Display Item Description:';
+$_['entry_pdf_catalog_image_height'] = 'Image Height:';
+$_['entry_pdf_catalog_image_width'] = 'Image Width:';
+$_['entry_pdf_catalog_item_per_page'] = 'Max Images Per Page:';
+$_['entry_pdf_catalog_description_chars'] = 'Max Chars in Description:';
+$_['entry_pdf_catalog_template_type'] = 'Template Type:';
+$_['entry_display_out_of_stock'] = 'Display out of stock Products:';
+$_['entry_display_disabled'] = 'Display disabled Products:';
+$_['entry_display_subcategories'] = 'Display Subcategories:';
+$_['entry_sort_products'] = 'Sort Products By:';
+$_['entry_pdf_max_options'] = 'Max option types to list:';
+$_['entry_pdf_max_per_options'] = 'Max options per option type:';
+$_['entry_pdf_catalog_text_orientation'] = 'Orientation:';
+$_['entry_entry_manufacturer'] = 'Manufacturer:';
+$_['entry_display_manufacturer_logo'] = 'Display Manufacturer Logo:';
+$_['entry_display_manufacturer_name'] = 'Display Manufacturer Name:';
+$_['entry_remove_empty_tags'] = 'Remove Empty Tags (Slower):';
+
+// Error
+$_['error_permission'] = 'Warning: You do not have permission to modify PDF catalog module!';

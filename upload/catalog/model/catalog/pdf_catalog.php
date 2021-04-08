@@ -6,13 +6,14 @@ class ModelCatalogPdfcatalog extends Model {
 		return $query->row;
 	}
 	
-	public function getPath($category_id) {
+	public function getPath($category_id=0,$text_separator="::") {
+	
 		$query = $this->db->query("SELECT name, parent_id FROM " . DB_PREFIX . "category c LEFT JOIN " . DB_PREFIX . "category_description cd ON (c.category_id = cd.category_id) WHERE c.category_id = '" . (int)$category_id . "' AND cd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY c.sort_order, cd.name ASC");
 		
 		$category_info = $query->row;
 		
 		if ($category_info['parent_id']) {
-			return $this->getPath($category_info['parent_id'], $this->config->get('config_language_id')) . $this->language->get('text_separator') . $category_info['name'];
+			return $this->getPath($category_info['parent_id']) . ' ' .$text_separator . ' ' .$category_info['name'];
 		} else {
 			return $category_info['name'];
 		}
@@ -42,7 +43,7 @@ class ModelCatalogPdfcatalog extends Model {
 	private function parseCategory($result) {		
 		return array(
 			'category_id' 	=> $result['category_id'],
-			'name'        	=> $this->getPath($result['category_id'], $this->config->get('config_language_id')),
+			'name'        	=> $this->getPath($result['category_id']),
 			'status'  	  	=> $result['status'],
 			'sort_order'  	=> $result['sort_order'],
 			'parent_id'		=> $result['parent_id']
