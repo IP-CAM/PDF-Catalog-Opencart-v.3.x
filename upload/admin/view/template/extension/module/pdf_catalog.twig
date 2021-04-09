@@ -12,8 +12,8 @@
         <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
         {% endfor %}
       </ul>
-      </div>
     </div>
+  </div>
   <div class="container-fluid">
     {% if error_warning %}
     <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
@@ -43,11 +43,11 @@
                 <div class="col-sm-10">
                   <select name="module_pdf_catalog_status" id="pdf_catalog_status" class="form-control">
                   {% if module_pdf_catalog_status %}
-                    <option value="1" selected="selected">{{ text_enabled }}</option>
-                    <option value="0">{{ text_disabled }}</option>
+                  <option value="1" selected="selected">{{ text_enabled }}</option>
+                  <option value="0">{{ text_disabled }}</option>
                   {% else %}
-                    <option value="1">{{ text_enabled }}</option>
-                    <option value="0" selected="selected">{{ text_disabled }}</option>
+                  <option value="1">{{ text_enabled }}</option>
+                  <option value="0" selected="selected">{{ text_disabled }}</option>
                   {% endif %}
                   </select>
                 </div>
@@ -70,13 +70,13 @@
                 <label class="col-sm-2 control-label" for="input-display-subcategories">{{ entry_display_subcategories }}</label>
                 <div class="col-sm-10">
                   <select name="module_pdf_catalog_display_subcategories" class="form-control">
-                {% if module_pdf_catalog_display_subcategories %}
+                  {% if module_pdf_catalog_display_subcategories %}
                   <option value="1" selected="selected">{{ text_yes }}</option>
                   <option value="0">{{ text_no }}</option>
-                {% else %}
+                  {% else %}
                   <option value="1">{{ text_yes }}</option>
                   <option value="0" selected="selected">{{ text_no }}</option>
-                {% endif %}
+                  {% endif %}
                   </select>
                   </div>
                 </div>
@@ -86,13 +86,13 @@
                 <label class="col-sm-2 control-label" for="input-display-toc">{{ entry_display_toc }}</label>
                 <div class="col-sm-10">
                   <select name="module_pdf_catalog_display_toc" class="form-control">
-                    {% if module_pdf_catalog_display_toc %}
-                    <option value="1" selected="selected">{{ text_yes }}</option>
-                    <option value="0">{{ text_no }}</option>
-                    {% else %}
-                    <option value="1">{{ text_yes }}</option>
-                    <option value="0" selected="selected">{{ text_no }}</option>
-                    {% endif %}
+                  {% if module_pdf_catalog_display_toc %}
+                  <option value="1" selected="selected">{{ text_yes }}</option>
+                  <option value="0">{{ text_no }}</option>
+                  {% else %}
+                  <option value="1">{{ text_yes }}</option>
+                  <option value="0" selected="selected">{{ text_no }}</option>
+                  {% endif %}
                   </select>
                   </div>
                 </div>
@@ -100,13 +100,13 @@
                 <label class="col-sm-2 control-label" for="input-display-out-of-stock">{{ entry_display_out_of_stock }}</label>
                 <div class="col-sm-10">
                   <select name="module_pdf_catalog_display_out_of_stock" class="form-control">
-                    {% if module_pdf_catalog_display_out_of_stock %}
-                    <option value="1" selected="selected">{{ text_yes }}</option>
-                    <option value="0">{{ text_no }}</option>
-                    {% else %}
-                    <option value="1">{{ text_yes }}</option>
-                    <option value="0" selected="selected">{{ text_no }}</option>
-                    {% endif %}
+                  {% if module_pdf_catalog_display_out_of_stock %}
+                  <option value="1" selected="selected">{{ text_yes }}</option>
+                  <option value="0">{{ text_no }}</option>
+                  {% else %}
+                  <option value="1">{{ text_yes }}</option>
+                  <option value="0" selected="selected">{{ text_no }}</option>
+                  {% endif %}
                   </select>
                   </div>
                 </div>
@@ -159,7 +159,7 @@
                   {% if module_pdf_catalog_sort_products == 'pd.name' %}
                   <option value="pd.name" selected="selected">{{ text_product_name }}</option>
                   <option value="quantitytotal">{{ text_product_popular }}</option>
-                      {% else %}
+                  {% else %}
                   <option value="pd.name">{{ text_product_name }}</option>
                   <option value="quantitytotal" selected="selected">{{ text_product_popular }}</option>
                   {% endif %}
@@ -167,16 +167,16 @@
                   </div>
                 </div>
               <div class="form-group">
-                <label class="col-sm-2 control-label" for="input-pdf-catalog-remove-empty-tags"><?php echo $entry_pdf_catalog_remove_empty_tags; ?></label>
+                <label class="col-sm-2 control-label" for="input-pdf-catalog-remove-empty-tags">{{ entry_pdf_catalog_remove_empty_tags }}</label>
                 <div class="col-sm-10">
-                  <select name="pdf_catalog_remove_empty_tags" class="form-control">
-                  <?php if ($pdf_catalog_remove_empty_tags == '0') { ?>
+                  <select name="module_pdf_catalog_remove_empty_tags" class="form-control">
+                  {% if module_pdf_catalog_remove_empty_tags == '0' %}
                   <option value="0" selected="selected">{{ text_yes }}</option>
                   <option value="1">{{ text_no }}</option>
-                  <?php } else { ?>
+                  {% else %}
                   <option value="0">{{ text_yes }}</option>
                   <option value="1" selected="selected">{{ text_no }}</option>
-                  <?php } ?>
+                  {% endif %}
                   </select>
                   </div>
                 </div>-->
@@ -199,16 +199,16 @@
                 </div>
               </div>
               <!--<div class="form-group">
-                <label class="col-sm-2 control-label" for="input-pdf-catalog-template-type"><?php echo $entry_pdf_catalog_template_type; ?></label>
+                <label class="col-sm-2 control-label" for="input-pdf-catalog-template-type">{{ entry_pdf_catalog_template_type }}</label>
                 <div class="col-sm-10">
-                  <select name="pdf_catalog_template_type" class="form-control">
-                  <?php if ($pdf_catalog_template_type == "native") { ?>
+                  <select name="module_pdf_catalog_template_type" class="form-control">
+                  {% if module_pdf_catalog_template_type == "native" %}
                   <option value="html">HTML</option>
-                  <option value="native" selected="selected"><?php echo $text_native; ?></option>
-                  <?php } else { ?>
+                  <option value="native" selected="selected">{{ text_native }}</option>
+                  {% else %}
                   <option value="html" selected="selected">HTML</option>
-                  <option value="native"><?php echo $text_native; ?></option>
-                  <?php } ?>
+                  <option value="native">{{ text_native }}</option>
+                  {% endif %}
                   </select>
                   </div>
                 </div>-->
@@ -275,10 +275,10 @@
                   {% if module_pdf_catalog_display_description %}
                   <option value="1" selected="selected">{{ text_yes }}</option>
                   <option value="0">{{ text_no }}</option>
-                      {% else %}
+                  {% else %}
                   <option value="1">{{ text_yes }}</option>
                   <option value="0" selected="selected">{{ text_no }}</option>
-                      {% endif %}
+                  {% endif %}
                   </select>
                   </div>
                 </div>
@@ -288,20 +288,22 @@
                   <input type="text" name="module_pdf_catalog_description_chars" value="{{ module_pdf_catalog_description_chars }}" placeholder="{{ module_pdf_catalog_description_chars }}" id="pdf_catalog_description_chars" class="form-control" />
                 </div>
               </div>
-                  <div class="form-group">
-                    <label class="col-sm-2 control-label" for="input-description{{ language.language_id }}">{{ entry_description }}</label>
-                    <div class="col-sm-10">
-                      <textarea name="module_pdf_catalog_description[{{ language.language_id }}][description]" placeholder="{{ entry_description }}" id="input-description{{ language.language_id }}" class="form-control summernote">{{ module_pdf_catalog_description[language.language_id] ? module_pdf_catalog_description[language.language_id].description }}</textarea>
-                    </div>
-                  </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-description{{ language.language_id }}">{{ entry_description }}</label>
+                <div class="col-sm-10">
+                  <textarea name="module_pdf_catalog_description[{{ language.language_id }}][description]" placeholder="{{ entry_description }}" id="input-description{{ language.language_id }}" class="form-control summernote">{{ module_pdf_catalog_description[language.language_id] ? module_pdf_catalog_description[language.language_id].description }}</textarea>
+                </div>
               </div>
-		</div>
-</form>
-</div>
-  <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
-  <link href="view/javascript/summernote/summernote.css" rel="stylesheet" />
-  <script type="text/javascript" src="view/javascript/summernote/opencart.js"></script> 
-  <script type="text/javascript">
+            </div>
+          </div>
+        </form>
+      </div>
+     </div>
+   </div>  
+<script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+<link href="view/javascript/summernote/summernote.css" rel="stylesheet" />
+<script type="text/javascript" src="view/javascript/summernote/opencart.js"></script> 
+<script type="text/javascript">
 	
 $('#module_pdf_catalog_description').summernote({height: 300});
 	
@@ -313,5 +315,6 @@ $( '#result' ).html( data );
 });
 }
 
-</script> 
+</script>
+</div>
 {{ footer }}

@@ -11,11 +11,11 @@ class ControllerExtensionModulePdfCatalog extends Controller {
 		
 		if ($this->config->get('module_pdf_catalog_display_categories') == 1) {
             if ($this->config->get('module_pdf_catalog_display_subcategories') == 0) {
-				$categories = $this->model_catalog_pdf_catalog->getMaincategories();
+                $categories = $this->model_catalog_pdf_catalog->getMaincategories();
             } else {
-				$categories = $this->model_catalog_pdf_catalog->getCategories(0);
-			}
-		} else {
+                $categories = $this->model_catalog_pdf_catalog->getCategories(0);
+            }
+        } else {
             $categories = '';
 		}
 

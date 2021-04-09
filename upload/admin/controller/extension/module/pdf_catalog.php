@@ -8,7 +8,6 @@ class ControllerExtensionModulePdfCatalog extends Controller {
 		$this->document->setTitle($this->language->get('heading_title'));
 		
 		$this->load->model('setting/setting');
-		//$this->load->model('design/layout');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
 			$this->model_setting_setting->editSetting('module_pdf_catalog', $this->request->post);
@@ -117,12 +116,6 @@ class ControllerExtensionModulePdfCatalog extends Controller {
 			$data['module_pdf_catalog_description'] = $this->config->get('module_pdf_catalog_description');
 		}
 
-		//if (isset($this->request->post['module_pdf_catalog_module'])) {
-			//$data['modules'] = $this->request->post['module_pdf_catalog_module'];
-		//} elseif ($this->config->get('module_pdf_catalog_module')) { 
-			//$data['modules'] = $this->config->get('module_pdf_catalog_module');
-		//}
-
 		if (isset($this->request->post['module_pdf_catalog_author'])) {
 			$data['module_pdf_catalog_author'] = $this->request->post['module_pdf_catalog_author'];
 		} else {
@@ -215,7 +208,6 @@ class ControllerExtensionModulePdfCatalog extends Controller {
 
 		$data['user_token'] = $this->session->data['user_token'];
 		$data['tcpdf'] = file_exists(DIR_SYSTEM . 'helper/tcpdf/tcpdf.php');
-		//$data['layouts'] = $this->model_design_layout->getLayouts();
 		
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
