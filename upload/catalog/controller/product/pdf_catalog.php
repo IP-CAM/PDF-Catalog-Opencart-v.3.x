@@ -172,7 +172,7 @@ class ControllerProductPdfCatalog extends Controller {
             // set font
             $pdf->SetFont('helvetica', '', 10);
 
-            if($this->config->get('pdf_catalog_text_orientation') == 'rtl') {
+            if($this->config->get('module_pdf_catalog_text_orientation') == 'rtl') {
                 $pdf->setRTL($enable = true, $resetx = true);
             }
 
@@ -274,7 +274,7 @@ class ControllerProductPdfCatalog extends Controller {
                         if ($product['image']) {
                             $image = $product['image'];
                         } else {
-                            $image = 'no_image.jpg';
+                            $image = 'no_image.png';
                         }
 
                         $thumb = $this->model_tool_image->resize($image, $image_width, $image_height);
